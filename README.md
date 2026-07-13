@@ -156,6 +156,36 @@ JSON Schemaで必須項目・所在・管理者・バージョンを検証する
 
 保存場所の選択より、研究との紐付け（台帳上の追跡）を優先する。
 
+GitHubは個人アカウント配下ではなく、**ラボの Organization** 下にリポジトリ・Issue・Projectsを置く。個人アカウントはメンバー参加用とし、資産の所有者はラボに固定する。NASアカウントもラボ所有とする。
+
+| 対象 | 所有者 |
+|------|--------|
+| GitHub Organization | ラボ |
+| Repository | ラボ |
+| Issue / Projects | ラボ |
+| GitHub Account | 個人 |
+| NASアカウント | ラボ |
+
+Organizationの運用目的は、資産の所有者をラボに固定したうえで、役割に応じた読み書き権限を分離することである。
+
+| 状況 | 読み取り | 書き込み | 備考 |
+|------|----------|----------|------|
+| ラボメンバー | ○ | ○ | 通常の学生・教員 |
+| 卒業生 | ○ / × を選択 | 通常は × | 必要に応じて残せる |
+| 共同研究者 | ○ | ○ / × | プロジェクトごとに設定 |
+| 一般公開 | Publicなら ○ | × | オープンソース等 |
+
+権限は Organization の Team で付与する。
+
+| Team | Repository権限 |
+|------|----------------|
+| Faculty | Admin |
+| Manager | Maintain |
+| Students | Write |
+| Alumni | なし（Organizationから削除） |
+
+卒業時は Alumni として残すのではなく、原則 Organization から削除する。削除後も個人アカウントの contribution graph は残る。
+
 ### 4.6 標準ディレクトリ構造
 
 ```text
