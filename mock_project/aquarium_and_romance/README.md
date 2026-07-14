@@ -199,6 +199,7 @@ aquarium_romance/
 │   └── run_analysis.py
 │
 ├── src/
+│   ├── config.py
 │   ├── preprocessing/
 │   │   └── clean_data.py
 │   │

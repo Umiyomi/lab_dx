@@ -2,13 +2,10 @@
 
 from __future__ import annotations
 
-import csv
 import random
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-MOCK_DIR = ROOT / "data" / "mock"
-PROCESSED_DIR = ROOT / "data" / "processed"
+from src.config import ANALYSIS_DATASET, SURVEY_RESPONSES_MOCK
+from src.preprocessing.clean_data import write_csv
 
 AGE_GROUPS = ["10代", "20代", "30代", "40代", "50代以上"]
 VISIT_PURPOSES = ["デート", "家族レジャー", "友人とのレジャー", "一人での観光", "その他"]
@@ -83,21 +80,13 @@ def generate_rows(n: int = 120, seed: int = 42) -> list[dict[str, str | int | bo
     return rows
 
 
-def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-
-
 def main() -> None:
     rows = generate_rows()
     raw_rows = [{k: v for k, v in row.items() if k in RAW_FIELDS} for row in rows]
-    write_csv(MOCK_DIR / "survey_responses_mock.csv", raw_rows, RAW_FIELDS)
-    write_csv(PROCESSED_DIR / "analysis_dataset.csv", rows, RAW_FIELDS + ["is_romantic_context"])
-    print(f"Wrote {MOCK_DIR / 'survey_responses_mock.csv'}")
-    print(f"Wrote {PROCESSED_DIR / 'analysis_dataset.csv'}")
+    write_csv(SURVEY_RESPONSES_MOCK, raw_rows, RAW_FIELDS)
+    write_csv(ANALYSIS_DATASET, rows, RAW_FIELDS + ["is_romantic_context"])
+    print(f"Wrote {SURVEY_RESPONSES_MOCK}")
+    print(f"Wrote {ANALYSIS_DATASET}")
 
 
 if __name__ == "__main__":
