@@ -1,0 +1,58 @@
+run_id: '20260714_004'
+started_at: '2026-07-14T21:48:12+09:00'
+ended_at: '2026-07-14T21:48:12+09:00'
+status: ok
+entrypoint: main.py
+user: umiyomi
+git:
+  commit: ffb6a8a
+  branch: main
+  dirty: true
+inputs:
+- path: data/mock/survey_responses_mock.csv
+  exists: true
+  size: 11234
+  mtime: '2026-07-14T19:49:48'
+  sha256: 7d175989f1d61a5a9ad6c761d4aaf513062ddbb4473db1864f62ca67e2341954
+outputs:
+- root: results
+  created: []
+  modified:
+  - path: results/figures/exhibit_ratings.svg
+    exists: true
+    size: 2186
+    mtime: '2026-07-14T21:48:12'
+    sha256: 5250d5765ed9e11fd7fbdd5ebe11dafeb7faab16d633e7e20b0bb4b30115406c
+  - path: results/figures/romantic_context_comparison.svg
+    exists: true
+    size: 1066
+    mtime: '2026-07-14T21:48:12'
+    sha256: aca0e52a226d8043f573df4175dc302207d805c4c6fedeec4ba15e2b4a02cc13
+  - path: results/tables/emotion_counts.csv
+    exists: true
+    size: 112
+    mtime: '2026-07-14T21:48:12'
+    sha256: b57b262372b6b2033dd93129475f0d3efcfd3227abc50d6f58a6359cc9ffddcd
+  - path: results/tables/exhibit_ratings.csv
+    exists: true
+    size: 185
+    mtime: '2026-07-14T21:48:12'
+    sha256: 35ea22a28b67a27d14dc106f5f8f7414fcba0c6f610c0e6852ca9514441c45bd
+  - path: results/tables/revisit_by_rating.csv
+    exists: true
+    size: 209
+    mtime: '2026-07-14T21:48:12'
+    sha256: 8b59c3ab6a54dfd666be62719a870d45424450f5d2a701600c83b03a853ea6d2
+  - path: results/tables/romantic_context_comparison.csv
+    exists: true
+    size: 94
+    mtime: '2026-07-14T21:48:12'
+    sha256: 247219b4f11f549e19717c9a3df8fe46ab801ceaae15c7595ee59b069e1130ff
+  deleted: []
+environment:
+  python: 3.11.15
+  python_implementation: CPython
+  package_manager: uv
+  lockfile:
+    path: uv.lock
+    sha256_12: cc43dc25747c

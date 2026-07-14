@@ -80,14 +80,10 @@ def generate_rows(n: int = 120, seed: int = 42) -> list[dict[str, str | int | bo
     return rows
 
 
-def main() -> None:
+def generate_mock_data() -> None:
     rows = generate_rows()
     raw_rows = [{k: v for k, v in row.items() if k in RAW_FIELDS} for row in rows]
     write_csv(SURVEY_RESPONSES_MOCK, raw_rows, RAW_FIELDS)
     write_csv(ANALYSIS_DATASET, rows, RAW_FIELDS + ["is_romantic_context"])
     print(f"Wrote {SURVEY_RESPONSES_MOCK}")
     print(f"Wrote {ANALYSIS_DATASET}")
-
-
-if __name__ == "__main__":
-    main()

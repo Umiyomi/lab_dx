@@ -52,6 +52,9 @@ flowchart LR
   processed --> tables[results/tables]
   dict[data_dictionary.md] -.-> processed
   processed -.-> report[report.md]
+  survey --> meta[metadata/runs]
+  figures --> meta
+  tables --> meta
 ```
 
 ## 1. 外部データによる探索
@@ -173,6 +176,7 @@ docs/
 aquarium_romance/
 
 ├── README.md
+├── main.py
 │
 ├── data/
 │   ├── external/
@@ -200,6 +204,7 @@ aquarium_romance/
 │
 ├── src/
 │   ├── config.py
+│   ├── logger/
 │   ├── preprocessing/
 │   │   └── clean_data.py
 │   │
@@ -209,9 +214,12 @@ aquarium_romance/
 │   └── visualization/
 │       └── plot_results.py
 │
-└── results/
-    ├── figures/
-    └── tables/
+├── results/
+│   ├── figures/
+│   └── tables/
+│
+└── metadata/
+    └── runs/
 ```
 
 ---
@@ -259,10 +267,22 @@ uv sync
 
 ## 解析ワークフロー
 
+標準エントリはプロジェクトルートの `main.py` のみ。
+
 ```bash
-uv run python scripts/generate_mock_data.py
-uv run python scripts/run_analysis.py
+uv run python main.py
 ```
+
+実行ごとに `metadata/runs/{run_id}.yaml` へ、`main.py` で宣言した入力・出力と Git 状態・実行環境が記録される。
+
+```python
+with ResearchRun(entrypoint="main.py") as run:
+    run.input(SURVEY_RESPONSES_MOCK)
+    run.output(RESULTS_DIR)
+    run_analysis()
+```
+
+`run.output()` には出力ルート（例: `results/`）だけを渡す。配下の生成・更新・削除は実行前後のスナップショット差分で記録する。
 
 生成物：
 
@@ -270,6 +290,9 @@ uv run python scripts/run_analysis.py
 results/
 ├── figures/
 └── tables/
+
+metadata/runs/
+└── {run_id}.yaml
 ```
 
 ## 依存パッケージ
@@ -278,6 +301,7 @@ results/
 |-----------|------|
 | pandas | データ処理・集計 |
 | matplotlib | 図表生成 |
+| pyyaml | 実行メタデータ（`metadata/runs/`）の出力 |
 
 アンケート用紙の docx 変換には [pandoc](https://pandoc.org/)（システム依存）を用いる。Python パッケージには含めない。
 

@@ -1,0 +1,33 @@
+run_id: '20260714_002'
+started_at: '2026-07-14T21:19:49+09:00'
+ended_at: '2026-07-14T21:19:49+09:00'
+status: ok
+entrypoint: main.py
+user: umiyomi
+git:
+  commit: ffb6a8a
+  branch: main
+  dirty: true
+inputs:
+- path: data/mock/survey_responses_mock.csv
+  exists: true
+  size: 11234
+  mtime: '2026-07-14T19:49:48'
+  sha256: 7d175989f1d61a5a9ad6c761d4aaf513062ddbb4473db1864f62ca67e2341954
+outputs:
+  created: []
+  modified:
+  - results/figures/exhibit_ratings.svg
+  - results/figures/romantic_context_comparison.svg
+  - results/tables/emotion_counts.csv
+  - results/tables/exhibit_ratings.csv
+  - results/tables/revisit_by_rating.csv
+  - results/tables/romantic_context_comparison.csv
+  deleted: []
+environment:
+  python: 3.11.15
+  python_implementation: CPython
+  package_manager: uv
+  lockfile:
+    path: uv.lock
+    sha256_12: cc43dc25747c

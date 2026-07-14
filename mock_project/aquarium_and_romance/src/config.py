@@ -13,10 +13,13 @@ DOCS_DIR = ROOT / "docs"
 RESULTS_DIR = ROOT / "results"
 FIGURES_DIR = RESULTS_DIR / "figures"
 TABLES_DIR = RESULTS_DIR / "tables"
+METADATA_DIR = ROOT / "metadata"
+RUNS_DIR = METADATA_DIR / "runs"
 
 VISITOR_DATA_MOCK = MOCK_DIR / "visitor_data_mock.csv"
 SURVEY_RESPONSES_MOCK = MOCK_DIR / "survey_responses_mock.csv"
 ANALYSIS_DATASET = PROCESSED_DIR / "analysis_dataset.csv"
+UV_LOCK = ROOT / "uv.lock"
 
 EXHIBIT_RATINGS_FIGURE = FIGURES_DIR / "exhibit_ratings.svg"
 ROMANTIC_CONTEXT_FIGURE = FIGURES_DIR / "romantic_context_comparison.svg"

@@ -1,4 +1,4 @@
-"""Run mock data generation, preprocessing, analysis, and figure export."""
+"""Analysis pipeline (library). Invoke via project root main.py."""
 
 from __future__ import annotations
 
@@ -45,9 +45,9 @@ FIELDNAMES = [
 def ensure_mock_data() -> None:
     if SURVEY_RESPONSES_MOCK.exists():
         return
-    from scripts.generate_mock_data import main as generate_main
+    from scripts.generate_mock_data import generate_mock_data
 
-    generate_main()
+    generate_mock_data()
 
 
 def write_summary_tables(rows: list[dict]) -> None:
@@ -83,7 +83,7 @@ def write_summary_tables(rows: list[dict]) -> None:
                 writer.writerow([bucket, intention, count])
 
 
-def main() -> None:
+def run_analysis() -> None:
     ensure_mock_data()
 
     raw_rows = load_csv(SURVEY_RESPONSES_MOCK)
@@ -100,7 +100,3 @@ def main() -> None:
     print(f"Processed dataset: {ANALYSIS_DATASET}")
     print(f"Figures: {FIGURES_DIR}")
     print(f"Tables: {TABLES_DIR}")
-
-
-if __name__ == "__main__":
-    main()
