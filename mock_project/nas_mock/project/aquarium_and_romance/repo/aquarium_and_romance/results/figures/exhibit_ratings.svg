@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360">
+<rect width="100%" height="100%" fill="#fafafa"/>
+<text x="320.0" y="24" text-anchor="middle" font-size="16" font-family="sans-serif">展示別 平均体験評価（mock）</text>
+<line x1="60" y1="40" x2="60" y2="270" stroke="#333"/>
+<line x1="60" y1="270" x2="620" y2="270" stroke="#333"/>
+<rect x="78.7" y="115.4" width="56.0" height="154.6" fill="#4C78A8"/>
+<text x="106.7" y="286" text-anchor="middle" font-size="11" font-family="sans-serif">その他</text>
+<text x="106.7" y="111.4" text-anchor="middle" font-size="10" font-family="sans-serif">3.36</text>
+<rect x="172.0" y="126.9" width="56.0" height="143.1" fill="#4C78A8"/>
+<text x="200.0" y="286" text-anchor="middle" font-size="11" font-family="sans-serif">イルカショー</text>
+<text x="200.0" y="122.9" text-anchor="middle" font-size="10" font-family="sans-serif">3.11</text>
+<rect x="265.3" y="122.8" width="56.0" height="147.2" fill="#4C78A8"/>
+<text x="293.3" y="286" text-anchor="middle" font-size="11" font-family="sans-serif">クラゲゾーン</text>
+<text x="293.3" y="118.8" text-anchor="middle" font-size="10" font-family="sans-serif">3.20</text>
+<rect x="358.7" y="113.1" width="56.0" height="156.9" fill="#4C78A8"/>
+<text x="386.7" y="286" text-anchor="middle" font-size="11" font-family="sans-serif">ペンギン館</text>
+<text x="386.7" y="109.1" text-anchor="middle" font-size="10" font-family="sans-serif">3.41</text>
+<rect x="452.0" y="125.1" width="56.0" height="144.9" fill="#4C78A8"/>
+<text x="480.0" y="286" text-anchor="middle" font-size="11" font-family="sans-serif">熱帯魚トンネル</text>
+<text x="480.0" y="121.1" text-anchor="middle" font-size="10" font-family="sans-serif">3.15</text>
+<rect x="545.3" y="115.0" width="56.0" height="155.0" fill="#4C78A8"/>
+<text x="573.3" y="286" text-anchor="middle" font-size="11" font-family="sans-serif">触れ合いプール</text>
+<text x="573.3" y="111.0" text-anchor="middle" font-size="10" font-family="sans-serif">3.37</text>
+<text x="16" y="155.0" transform="rotate(-90 16,155.0)" text-anchor="middle" font-size="12" font-family="sans-serif">平均体験評価</text>
+</svg>
