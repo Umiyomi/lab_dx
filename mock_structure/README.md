@@ -8,19 +8,32 @@
 ```
 .
 ├── README.md
-└── mock_project
-    ├── aquarium_and_romance
-    │   ├── README.md
-    │   ├── data
-    │   ├── docs
-    │   ├── main.py
-    │   ├── metadata
-    │   ├── pyproject.toml
-    │   ├── results
-    │   ├── scripts
-    │   ├── src
-    │   └── uv.lock
+└── mock_structure
+    ├── README.md
+    ├── mock_repositories
+    │   └── aquarium_and_romance
+    │       ├── README.md
+    │       ├── data
+    │       ├── docs
+    │       ├── main.py
+    │       ├── metadata
+    │       ├── pyproject.toml
+    │       ├── results
+    │       ├── scripts
+    │       ├── src
+    │       └── uv.lock
     └── nas_mock
         ├── project
+        │   └── aquarium_and_romance
+        │       ├── deliverables
+        │       │   └── graduate_thesis.md
+        │       ├── outputs
+        │       │   └── fig1_visitor_hist.png
+        │       ├── repo
+        │       │   └── aquarium_and_romance
+        │       └── reports
+        │           └── mid_report.md
         └── raw
+            └── aquarium
+                └── visitor_data.csv
 ```
